@@ -4,26 +4,137 @@
         <meta charset="UTF-8">
         <title>Portafolio</title>
         <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <nav>
-            <a href="index.html">Inicio</a>
-            <a href="curriculum.html">Curriculum</a>
-            <a href="portafolio.html">Portafilio</a>
-            <a href="contacto.html">Contacto</a>
-        </nav>
 
-<div class="galeria">
+<body> 
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="curriculum.html">Curriculum</a>
+        <a href="portafolio.html">Portafolio</a>
+        <a href="contacto.html">Conctacto</a>
+    </nav>
+<h1>Mi Portafolio</h1>
 
-    <a href="proyecto1.html">
-        <img src="img/proyecto1.jpg">
-        <p>Proyecto 1</p>
+<!-- BOTONES -->
+<div class="filtros">
+    <button onclick="mostrarSeccion('carteles')">Carteles</button>
+    <button onclick="mostrarSeccion('ilustraciones')">Ilustraciones</button>
+    <button onclick="mostrarSeccion('modelados')">Modelados</button>
+</div>
+
+<!-- SECCIONES -->
+<section id="carteles" class="seccion">
+    <h2>Carteles</h2>
+    <div class="galeria">
+
+        <a href="proyecto1.html" class="card">
+        <img src="img/infografia.png">
+        <h3>Infografia Xmedia Fest</h3>
+        <p>Taller Diseño Digital II</p>
     </a>
 
-</div>
+    <a href="proyecto2.html" class="card">
+        <img src="img/post.png">
+        <h3>Post xmedia Fest</h3>
+        <p>Taller Diseño Digital II</p>
+    </a>
+
+    <a href="proyecto3.html" class="card">
+        <img src="img/infografia_eleonorypark.png">
+        <h3>Infografia Eleonor y park</h3>
+        <p>Taller Diseño Digiatal</p>
+    </a>
+
+    </div>
+
+</section>
+
+<section id="ilustraciones" class="seccion">
+    <h2>Ilustraciones</h2>
+    <div class="galeria">
+
+        <a href="proyecto4.html" class="card">
+        <img src="img/ilu1.jpg">
+        <h3>Ilustración Persoanje</h3>
+    </a>
+
+    <a href="proyecto5.html" class="card">
+        <img src="img/ilu2.jpg">
+        <h3>Self-insert</h3>
+    </a>
+
+    <a href="proyecto6.html" class="card">
+        <img src="img/ilu2.jpg">
+        <h3>Fanart Libro de la Vida</h3>
+    </a>
+    </div>
+
+</section>
+
+<section id="modelados" class="seccion">
+    <h2>Modelados 3D</h2>
+    <div class="galeria">
+      
+    <a href="proyecto7.html" class="card">
+        <img src="img/extintor.png">
+        <h3>Extintor</h3>
+    </a>
+
+    <a href="proyecto8.html" class="card">
+        <img src="img/maceta.png">
+        <h3>Maceta</h3>
+    </a>
+
+    <a href="proyecto9.html" class="card">
+        <img src="img/bote.png">
+        <h3>Bote de Basura</h3>
+    </a>
+
+    </div>
+</section>
+
 
   <footer>
     <p>© 2026 chio | Portafolio</p>
 </footer>
+
+<script>
+function mostrarSeccion(id) {
+    const secciones = document.querySelectorAll('.seccion');
+
+    secciones.forEach(sec => {
+        sec.classList.remove('activa');
+    });
+
+    document.getElementById(id).classList.add('activa');
+}
+
+// Mostrar la primera sección al cargar
+document.getElementById('carteles').classList.add('activa');
+</script>
+
+<script>
+let index = 0;
+const slides = document.querySelectorAll('.slide');
+
+function mostrarSlide(i) {
+    slides.forEach(slide => slide.classList.remove('activa'));
+    slides[i].classList.add('activa');
+}
+
+function cambiarSlide(direccion) {
+    index += direccion;
+
+    if (index < 0) {
+        index = slides.length - 1;
+    }
+
+    if (index >= slides.length) {
+        index = 0;
+    }
+
+    mostrarSlide(index);
+}
+</script>
+
 </body>
 </html>

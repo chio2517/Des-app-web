@@ -1,73 +1,118 @@
+/* ===================== */
+/* ESTILOS GENERALES */
+/* ===================== */
+
 body {
     font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #bbf7d0, #dcfce7, #f0fdf4);
+    margin: 0;
 }
 
-h1 {
-    margin-bottom: 5px;
-}
+/* ===================== */
+/*  TITULOS */
+/* ===================== */
 
 h1 {
-
     font-size: 3em;
     font-weight: 700;
     letter-spacing: 2px;
     color: #064e3b;
+    margin-bottom: 5px;
+    text-align: center;
 }
 
 h2 {
+    color: #047857;
     border-bottom: 2px solid #a7f3d0;
     display: inline-block;
     padding-bottom: 5px;
 }
 
-/* HEADER */
+/* ===================== */
+/*  HEADER */
+/* ===================== */
+
 header {
     padding: 30px;
+    text-align: center;
 }
 
-/* NAV */
+/* ===================== */
+/* NAVBAR */
+/* ===================== */
+
 nav {
-    margin: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+    flex-wrap: wrap;
 }
 
 nav a {
-    margin: 0 15px;
+    padding: 10px 20px;
     text-decoration: none;
-    color: #047857;
-    font-weight: bold;
+    color: #065f46;
+    font-weight: 500;
+
+    background: white;
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.3);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     transition: 0.3s;
 }
 
 nav a:hover {
-    color: #065f46;
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.6);
 }
 
+/* ===================== */
 /* SECCIONES GLASS */
+/* ===================== */
+
 section {
     margin: 30px auto;
     padding: 25px;
     max-width: 800px;
 
-    background: rgba(255, 255, 255, 0.5);
+    background: white;
     border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 100, 0, 0.1);
+    border: 1px solid #d1fae5;
 
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
 
     box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+
+    transition: 0.3s;
 }
 
-/* TITULOS */
-h1 {
-    font-size: 2.5em;
-    margin: 0;
+
+
+section:hover {
+    transform: scale(1.01);
 }
 
-h2 {
-    color: #047857;
+section {
+    transition: 0.3s;
 }
 
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(16, 185, 129, 0.3);
+}
+
+
+/* ===================== */
 /* LISTAS */
+/* ===================== */
+
 ul {
     list-style: none;
     padding: 0;
@@ -77,17 +122,21 @@ li {
     margin: 8px 0;
 }
 
+/* ===================== */
 /* GALERÍA */
-.galeria a {
-    background: rgba(255,255,255,0.5);
-    padding: 10px;
-    border-radius: 15px;
-}
+/* ===================== */
+
 .galeria {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
     padding: 30px;
+}
+
+.galeria a {
+    background: white;
+    padding: 10px;
+    border-radius: 15px;
 }
 
 .galeria img {
@@ -100,11 +149,19 @@ li {
     transform: scale(1.05);
 }
 
-/* ANIMACIÓN SUAVE */
-section:hover {
-    transform: scale(1.01);
+.galeria a {
     transition: 0.3s;
 }
+
+.galeria a:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(16, 185, 129, 0.25);
+}
+
+
+/* ===================== */
+/* PERFIL */
+/* ===================== */
 
 .perfil {
     width: 120px;
@@ -112,27 +169,44 @@ section:hover {
     margin-top: 15px;
 }
 
+/* ===================== */
+/* CV */
+/* ===================== */
+
 .cv {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 25px;
     padding: 30px;
 }
-/* COLUMNAS */
+
 .columna {
-    background: rgba(255, 255, 255, 0.5);
+    background: white;
     padding: 20px;
     border-radius: 20px;
 
     backdrop-filter: blur(10px);
     box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
-/* TITULOS */
+
 .columna h2 {
     margin-bottom: 15px;
 }
 
+.columna {
+    transition: 0.3s;
+}
+
+.columna:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(16, 185, 129, 0.25);
+}
+
+
+/* ===================== */
 /* SKILLS */
+/* ===================== */
+
 .skill {
     display: inline-block;
     background: rgba(16, 185, 129, 0.2);
@@ -140,4 +214,168 @@ section:hover {
     margin: 5px;
     border-radius: 20px;
     font-size: 0.9em;
+}
+
+/* ===================== */
+/* NOMBRE (IMAGEN) */
+/* ===================== */
+
+.nombre-img {
+    width: 500px; 
+    display: block;
+    margin: 20px auto;
+    border-radius: 15px;
+}
+
+.seccion {
+    display: none;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.seccion.activa {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* BOTONES */
+.filtros {
+    text-align: center;
+    margin: 20px;
+}
+
+.filtros button {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 10px;
+    background: #a7f3d0;
+    cursor: pointer;
+}
+.filtros button {
+    background: rgba(255,255,255,0.5);
+    backdrop-filter: blur(10px);
+    color: #065f46;
+}
+
+.carrusel {
+    position: relative;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+/* IMÁGENES */
+.slide {
+    width: 100%;
+    display: none;
+    border-radius: 20px;
+}
+
+.slide.activa {
+    display: block;
+}
+
+/* BOTONES */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    background: rgba(255,255,255,0.6);
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+
+    backdrop-filter: blur(10px);
+}
+
+.prev {
+    left: -10px;
+}
+
+.next {
+    right: -10px;
+}
+
+.info-proyecto {
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 20px;
+
+    background: white;
+    border-radius: 20px;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.info-proyecto h2 {
+    margin-bottom: 10px;
+}
+
+.info-proyecto p {
+    color: #065f46;
+    line-height: 1.6;
+}
+
+/* Imagenes de carrusel para el portafolio */
+.carrusel {
+    position: relative;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+/*Imagenes*/
+.slide {
+    width: 100%;
+    display: none;
+    border-radius: 20px;
+}
+
+.slide.activa {
+    display: block;
+}
+
+/*Botones del carrusel*/
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    background: rgba(255,255,255,0.6);
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+
+    backdrop-filter: blur(10px);
+}
+
+.prev { left: -10px; }
+.next { right: -10px; }
+
+/*Descripción*/
+.info-proyecto {
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 20px;
+
+    background: white;
+    border-radius: 20px;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/*Boton para volver*/
+a {
+    display: block;
+    text-align: center;
+    margin: 20px;
+    color: #065f46;
+    text-decoration: none;
 }
