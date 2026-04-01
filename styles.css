@@ -225,6 +225,7 @@ li {
     display: block;
     margin: 20px auto;
     border-radius: 15px;
+
 }
 
 .seccion {
@@ -252,7 +253,7 @@ li {
     margin: 5px;
     border: none;
     border-radius: 10px;
-    background: #a7f3d0;
+    background: linear-gradient(135deg, #bbf7d0, #dcfce7, #f0fdf4);
     cursor: pointer;
 }
 .filtros button {
@@ -322,41 +323,25 @@ li {
     line-height: 1.6;
 }
 
-/* Imagenes de carrusel para el portafolio */
-.carrusel {
-    position: relative;
-    max-width: 600px;
+/* Imagenes para el portafolio */
+.imagenes-proyecto {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 800px;
     margin: 20px auto;
 }
 
-/*Imagenes*/
-.slide {
+.imagenes-proyecto img {
     width: 100%;
-    display: none;
     border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: 0.3s;
 }
 
-.slide.activa {
-    display: block;
+.imagenes-proyecto img:hover {
+    transform: scale(1.03);
 }
-
-/*Botones del carrusel*/
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    
-    background: rgba(255,255,255,0.6);
-    border: none;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-
-    backdrop-filter: blur(10px);
-}
-
-.prev { left: -10px; }
-.next { right: -10px; }
 
 /*Descripción*/
 .info-proyecto {
@@ -378,4 +363,42 @@ a {
     margin: 20px;
     color: #065f46;
     text-decoration: none;
+}
+
+.inicio-portafolio {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+.portada-categoria {
+    position: relative;
+    text-decoration: none;
+    border-radius: 25px;
+    overflow: hidden;
+
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    transition: 0.3s;
+}
+
+.portada-categoria img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    filter: brightness(0.7);
+}
+
+.portada-categoria h2 {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    font-size: 1.8em;
+}
+
+.portada-categoria:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(16,185,129,0.3);
 }
