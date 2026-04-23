@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --bg: #0f1724;
+    --card: #0b1220;
+    --accent: #7c5cff;
+    --muted: #9aa4b2;
+    --glass: rgba(255, 255, 255, 0.03);
+    --radius: 12px;
+}
+
+* {
+    box-sizing: border-box
+}
+
+html,
+body {
+    height: 100%
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background: linear-gradient(180deg, var(--bg) 0%, #071025 100%);
+    color: #e6eef6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+}
+
+/* App container */
+main#excusa {
+    font-size: 42px !important;
+    width: 100%;
+    max-width: 720px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    box-shadow: 0 10px 30px rgba(2, 6, 23, 0.6);
+    padding: 28px;
+    border-radius: var(--radius);
+    backdrop-filter: blur(6px) saturate(120%);
+    transition: transform .18s ease, box-shadow .18s ease;
+}
+
+main#excusa:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(2, 6, 23, 0.7);
+}
+
+h1 {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 0 18px 0;
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: var(--accent);
+    letter-spacing: 0.2px;
+    text-align: center;
+}
+
+/* Excuse text */
+main#excusa {
+    display: flex;
+    flex-direction: column;
+    gap: 8px
+}
+
+main#excusa::before {
+    content: '';
+    display: block;
+    height: 6px;
+    width: 64px;
+    background: linear-gradient(90deg, var(--accent), #4cc1ff);
+    border-radius: 4px;
+    margin-bottom: 6px;
+}
+
+main#excusa p,
+main#excusa {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #e8f0ff
+}
+
+main#excusa {
+    padding: 22px
+}
+
+/* If the script inserts plain text into the element, ensure readable layout */
+main#excusa {
+    white-space: pre-wrap;
+    word-break: break-word
+}
+
+/* Small helper styles for future buttons/controls */
+.controls {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 12px
+}
+
+
+/* Responsive */
+@media (max-width:520px) {
+    h1 {
+        font-size: 1.25rem
+    }
+
+    main#excusa {
+        padding: 16px
+    }
+}
+
+/* Simple fade-in for initial content */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(6px)
+    }
+
+    to {
+        opacity: 1;
+        transform: none
+    }
+}
+
+main#excusa {
+    animation: fadeInUp .45s ease both
+}
+
+.btn-nuevo {
+    background: linear-gradient(135deg, #c084fc, #7dd3fc);
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 8px 20px rgba(192, 132, 252, 0.35);
+}
+
+.btn-nuevo:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 26px rgba(125, 211, 252, 0.45);
+    filter: brightness(1.08);
+}
+
+.btn-nuevo:active {
+    transform: translateY(1px);
+    box-shadow: 0 4px 12px rgba(192, 132, 252, 0.25);
+}

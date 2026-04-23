@@ -38,3 +38,15 @@ const columnaC = [
   "cerramos el proyecto para revisión",
   "entregamos sin errores (esperemos)"
 ];
+
+function generarExcusa() {
+    const excusaA = columnaA[Math.floor(Math.random() * columnaA.length)];
+    const excusaB = columnaB[Math.floor(Math.random() * columnaB.length)];
+    const excusaC = columnaC[Math.floor(Math.random() * columnaC.length)];
+    
+    const excusaFinal = `Mi excusa es: ${excusaA} ${excusaB} ${excusaC}.`;
+    
+    document.getElementById("excusa").textContent = excusaFinal;
+}
+
+generarExcusa();
